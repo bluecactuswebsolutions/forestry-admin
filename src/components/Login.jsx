@@ -15,7 +15,6 @@ class Login extends Component {
   }
 
   handleSubmit = () => {
-    console.log(this.state);
     AuthActions.login(this.state);
   }
 
