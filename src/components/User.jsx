@@ -18,6 +18,17 @@ import {
 class User extends Component {
   state = {};
 
+  handleChange = (name, value) => {
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleSubmit = () => {
+    console.log('this state', this.state);
+    // AuthActions.login(this.state);
+  }
+
   render() {
     return (
       <div className="App">

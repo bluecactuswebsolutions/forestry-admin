@@ -14,7 +14,6 @@ export function login(payload) {
 export function fetchUsers() {
   return axios.get('http://localhost:9000/api/users')
     .then((response) => {
-      console.log('response : ', response);
       return response.data;
     })
     .catch((err) => {
