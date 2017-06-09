@@ -16,7 +16,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('this tsate users', this.state.users);
     return (
       <div className="App">
         <div className="App-header">
