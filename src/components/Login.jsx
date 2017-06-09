@@ -15,7 +15,7 @@ class Login extends Component {
   }
 
   handleSubmit = () => {
-    AuthActions.login(this.state);
+    this.props.handleLogin(this.state);
   }
 
   render() {

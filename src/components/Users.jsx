@@ -13,14 +13,16 @@ class Users extends Component {
 
   renderUser = (item, idx) => {
     return (
-      <Link to={`${item._id}`} key={idx}>
         <Bucket className="u-m-b">
-          <BucketHeader title={item.info.businessName} />
+          <BucketHeader className="u-flex-justify-between" title={item.info.businessName}>
+            {!item.active ? <Button onClick={() => this.props.toggleActive(true, item._id)} type="primary">Activate</Button> : <Button onClick={() => this.props.toggleActive(false, item._id)} type="danger">Deactivate</Button>}
+          </BucketHeader>
           <BucketBody>
-            {item.info.description}
+            <Link to={`${item._id}`} key={idx}>
+              {item.info.description}
+            </Link>
           </BucketBody>
         </Bucket>
-      </Link>
     );
   }
 

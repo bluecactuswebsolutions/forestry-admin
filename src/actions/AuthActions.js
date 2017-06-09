@@ -4,7 +4,6 @@ export function login(payload) {
   return axios.post('http://localhost:9000/api/login', payload)
     .then(() => {
       localStorage.setItem('user', true);
-      location.replace('/test'); // eslint-disable-line
     })
     .catch((err) => {
       console.error(err.response || err); // eslint-disable-line no-console
@@ -24,6 +23,17 @@ export function fetchUsers() {
 
 export function fetchUser(id) {
   return axios.get(`http://localhost:9000/api/users/${id}`)
+    .then((response) => {
+      return response.data[0];
+    })
+    .catch((err) => {
+      console.error(err.response || err); // eslint-disable-line no-console
+      return err;
+    });
+}
+
+export function patchUser(id) {
+  return axios.patch(`http://localhost:9000/api/users/${id}`)
     .then((response) => {
       return response.data[0];
     })
