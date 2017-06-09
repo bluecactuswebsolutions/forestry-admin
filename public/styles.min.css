@@ -2490,11 +2490,6 @@ h3 .label {
 .label__icon {
   margin-right: 0.4rem;
 }
-.ril-close {
-  background: url('../../dist/svg/sprite.svg#icon-close') no-repeat 50% !important;
-  background-size: 60% !important;
-  fill: #fff;
-}
 .loader-circle {
   border-radius: 50%;
   border-style: solid;
@@ -3943,4 +3938,9 @@ body {
 }
 .login-button {
   margin-top: 10px;
+}
+.user-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 20px;
 }

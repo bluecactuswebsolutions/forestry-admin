@@ -27,11 +27,11 @@ class Users extends Component {
   render() {
     return (
       <div className="login">
-        <Button className="u-m-b" block type="primary">
-          <Link to="/new">
+        <Link className="u-text-white" to="/new">
+          <Button className="u-m-b" block type="primary">
             Create new user
-          </Link>
-        </Button>
+          </Button>
+        </Link>
         {this.props.users ? this.props.users.map(this.renderUser) : null}
       </div>
     );

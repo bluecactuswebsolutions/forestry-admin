@@ -21,3 +21,14 @@ export function fetchUsers() {
       return err;
     });
 }
+
+export function fetchUser(id) {
+  return axios.get(`http://localhost:9000/api/users/${id}`)
+    .then((response) => {
+      return response.data[0];
+    })
+    .catch((err) => {
+      console.error(err.response || err); // eslint-disable-line no-console
+      return err;
+    });
+}
