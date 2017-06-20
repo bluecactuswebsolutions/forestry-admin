@@ -6,7 +6,6 @@ import {
   BucketHeader,
   BucketBody,
 } from 'rhinostyle';
-import * as AuthActions from '../actions/AuthActions.js';
 
 class Users extends Component {
   state = {};

@@ -5048,6 +5048,12 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-avatar-editor@^9.1.1:
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/react-avatar-editor/-/react-avatar-editor-9.1.1.tgz#6a9c83c35698936530ff6c602966461abd145aeb"
+  dependencies:
+    prop-types "^15.5.8"
+
 react-custom-scrollbars@4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/react-custom-scrollbars/-/react-custom-scrollbars-4.1.2.tgz#0e60c4a46c4a61f9e4994a7663e2b9cbbc5187a3"

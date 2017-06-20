@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Button, Input, UtilityInlineGrid } from 'rhinostyle';
-import * as AuthActions from '../actions/AuthActions.js';
 
 class Login extends Component {
   state = {

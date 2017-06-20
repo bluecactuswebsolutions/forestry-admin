@@ -1,33 +1,33 @@
 import React, { Component } from 'react';
 import {
   Button,
-  Bucket,
-  BucketHeader,
-  BucketBody,
   Input,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
   ModalSystem,
   Select,
   Textarea,
-  UtilityInlineGrid,
 } from 'rhinostyle';
 import * as AuthActions from '../actions/AuthActions.js';
+import AvatarUpload from './AvatarUpload';
+
 class User extends Component {
   state = {};
 
   componentWillMount() {
-    AuthActions.fetchUser(this.props.match.params.id)
-      .then((data) => {
-        console.log(data);
-        this.setState({
-          businessName: data.info.businessName,
-          phoneNumber: data.info.phone,
-          emailAddress: data.info.emailAddress,
-        });
-      });
+    if (this.props.match.params.id) {
+      AuthActions.fetchUser(this.props.match.params.id)
+        .then((data) => {
+          this.setState({
+            businessName: data.info.businessName,
+            phoneNumber: data.info.phone,
+            emailAddress: data.info.emailAddress,
+          });
+        })
+        .catch((err) => console.log(err));
+    }
+  }
+
+  handleUploadAvatarClick = () => {
+    ModalSystem.addModal(<AvatarUpload uploadAvatar={this.uploadAvatar} />);
   }
 
   handleChange = (name, value) => {
@@ -55,10 +55,10 @@ class User extends Component {
             <Input className="col-sm-6" label="Phone" name="phone" initialValue={this.state.phoneNumber} onChange={this.handleChange} />
             <Input className="col-sm-6" label="Email" name="email" initialValue={this.state.emailAddress} onChange={this.handleChange} />
           </div>
-          {/*<div className="row">
-            <Select className="col-sm-6" onSelect={this.handleSelect} selected={this.state.service} name="service" label="Service" options={selectOpts} />
-            <Select className="col-sm-6" onSelect={this.handleSelect} selected={this.state.category} name="category" label="Category" options={selectOpts} />
-          </div>*/}
+          <div className="row">
+            <Select className="col-sm-6" onSelect={this.handleSelect} selected={this.state.service} name="service" label="Service" options={[]} />
+            <Select className="col-sm-6" onSelect={this.handleSelect} selected={this.state.category} name="category" label="Category" options={[]} />
+          </div>
           <div>
             <Input placeholder="ex. 1 King St." initialValue={this.state.street} onChange={this.handleChange} label="Address" name="street" />
             <div className="row row--condensed">
